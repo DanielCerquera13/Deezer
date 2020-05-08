@@ -1,10 +1,11 @@
 package com.example.deezer.model;
 
-public class Data {
+import java.io.Serializable;
+
+public class Data implements Serializable {
 
     private long id;
     private String title;
-    private boolean publico;
     private long nb_tracks;
     private String link;
     private String picture;
@@ -15,13 +16,17 @@ public class Data {
     private String checksum;
     private String tracklist;
     private String creation_date;
+    private String description;
     private User user;
     private String type;
 
-    public Data(long id, String title, boolean publico, long nb_tracks, String link, String picture, String picture_small, String picture_medium, String picture_big, String picture_xl, String checksum, String tracklist, String creation_date, User user, String type) {
+
+    public Data() {
+    }
+
+    public Data(long id, String title, long nb_tracks, String link, String picture, String picture_small, String picture_medium, String picture_big, String picture_xl, String checksum, String tracklist, String creation_date, String description, User user, String type) {
         this.id = id;
         this.title = title;
-        this.publico = publico;
         this.nb_tracks = nb_tracks;
         this.link = link;
         this.picture = picture;
@@ -32,6 +37,7 @@ public class Data {
         this.checksum = checksum;
         this.tracklist = tracklist;
         this.creation_date = creation_date;
+        this.description = description;
         this.user = user;
         this.type = type;
     }
@@ -44,15 +50,7 @@ public class Data {
         this.type = type;
     }
 
-    public boolean isPublico() {
-        return publico;
-    }
-
-    public void setPublico(boolean publico) {
-        this.publico = publico;
-    }
-
-    public long getNb_tracks() {
+   public long getNb_tracks() {
         return nb_tracks;
     }
 
@@ -60,8 +58,7 @@ public class Data {
         this.nb_tracks = nb_tracks;
     }
 
-    public Data() {
-    }
+
 
     public long getId() {
         return id;
@@ -158,4 +155,14 @@ public class Data {
     public void setUser(User user) {
         this.user = user;
     }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+
 }

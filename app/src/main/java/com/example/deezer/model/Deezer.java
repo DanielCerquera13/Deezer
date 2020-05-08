@@ -1,8 +1,11 @@
 package com.example.deezer.model;
 
-public class Deezer {
+import java.io.Serializable;
+
+public class Deezer implements Serializable {
 
     private Data[] data;
+
 
 
     public Deezer(Data[] data) {

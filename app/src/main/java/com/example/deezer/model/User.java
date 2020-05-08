@@ -1,14 +1,15 @@
 package com.example.deezer.model;
 
-public class User {
+import java.io.Serializable;
 
-    private int id;
+public class User implements Serializable {
+
+    private long id;
     private String name;
     private String tracklist;
     private String type;
 
-
-    public User(int id, String name, String tracklist, String type) {
+    public User(long id, String name, String tracklist, String type) {
         this.id = id;
         this.name = name;
         this.tracklist = tracklist;
@@ -18,11 +19,11 @@ public class User {
     public User() {
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
